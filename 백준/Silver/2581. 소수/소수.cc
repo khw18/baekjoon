@@ -1,11 +1,10 @@
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
 
 int main(){
     int m, n, sum = 0, min = 10000;
     bool prime;
-    cin >> m >> n;
+    scanf("%d %d",&m,&n);
 
 
     for(int i = m; i <= n; i++){
@@ -23,8 +22,8 @@ int main(){
         }
     }
     if(sum)
-        cout << sum << endl << min;
+        printf("%d\n%d",sum,min);
     else
-        cout << -1;
+        printf("-1");
 
 }
