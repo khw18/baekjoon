@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#include <cstdio>
 
 int main(){
     int m, n, sum = 0, min = 10000;
@@ -9,7 +8,7 @@ int main(){
 
     for(int i = m; i <= n; i++){
         prime = true;
-        for(int j = 2; j < i; j++){
+        for(int j = 2; j*j <= i; j++){
             if(i%j==0) {
                 prime = false;
                 break;
