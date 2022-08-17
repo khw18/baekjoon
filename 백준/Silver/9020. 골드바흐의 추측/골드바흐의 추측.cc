@@ -1,42 +1,23 @@
-#include <cstdio>
-#include <cstdlib>
+#include<stdio.h>
 
 int main(){
-    int t, n, temp_a, temp_b, a, b, dist;
-    bool prime = true;
 
+    int n,i,j,T;
+    int arr[10001] = {1,};
 
-    scanf("%d",&t);
-    while(t--){
-        scanf("%d", &n);
-        dist = n;
-        for(int i = 2; i < n-1; i++){
-            for(int j = 2; j*j <= i; j++){
-                if(i%j==0){
-                    prime = false;
-                    break;
-                }
-            }
-            if(prime){
-                temp_a = i;
-                temp_b = n-temp_a;
-                for(int j = 2; j*j <= temp_b; j++){
-                    if(temp_b%j==0){
-                        prime = false;
-                        break;
-                    }
-                }
-                if(prime){
-                    if(dist > abs(temp_a-temp_b)){
-                        dist = abs(temp_a-temp_b);
-                        a = temp_a;
-                        b = temp_b;
-                    }
-                }
-            }
-            prime = true;
-        }
-        printf("%d %d\n", a, b);
+    for(i=2;i<=100;i++){
+        for(j=i*i;j<=10000;j+=i) arr[j]++;
     }
 
+    scanf("%d",&T);
+
+    while(T--){
+        scanf("%d",&n);
+        for(i=j=n/2;;i++,j--){
+            if(!arr[i]&&!arr[j]){
+                printf("%d %d\n",j,i);
+                break;
+            }
+        }
+    }
 }
