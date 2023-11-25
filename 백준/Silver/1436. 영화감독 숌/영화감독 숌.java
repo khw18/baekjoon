@@ -7,27 +7,15 @@ class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int sum = 666;
-        String str;
+        int num = 666;
         int cnt = 1;
 
-        while (true) {
-            if (cnt == N) {
-                break;
-            }
-            sum++;
-            str = sum + "";
-            for (int i = 0; i < str.length() - 2; i++) {
-                if (str.charAt(i) - '0' == 6 && str.charAt(i+1) - '0' == 6 && str.charAt(i + 2) - '0' == 6) {
-                    cnt++;
-                    break;
-                }
-            }
+        while (cnt != N) {
+            num++;
+            if(String.valueOf(num).contains("666")) cnt++;
         }
-
-        bw.write(sum + "");
+        bw.write(num+"");
         bw.flush();
         bw.close();
-
     }
 }
