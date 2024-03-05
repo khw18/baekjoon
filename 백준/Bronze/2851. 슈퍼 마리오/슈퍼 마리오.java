@@ -7,7 +7,7 @@ class Main{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int sum = 0;
         int temp;
-        int nextGap = Integer.MAX_VALUE;
+        int nextGap; 
         int currentGap;
         for (int i = 0; i < 10; i++) {
             temp = Integer.parseInt(br.readLine());
