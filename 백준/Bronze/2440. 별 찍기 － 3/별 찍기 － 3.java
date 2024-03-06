@@ -6,12 +6,13 @@ class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-
+        StringBuilder sb = new StringBuilder();
         for (int i = N; i > 0; i--) {
             for (int j = i; j > 0; j--) {
-                System.out.print("*");
+                sb.append("*");
             }
-            System.out.println();
+            sb.append("\n");
         }
+        System.out.print(sb);
     }
 }
