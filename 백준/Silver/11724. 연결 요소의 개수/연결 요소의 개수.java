@@ -28,7 +28,7 @@ class Main {
         }
         for (int i = 1; i <= n; i++) {
             if (!visit[i]) {
-                dfs(i);
+                bfs(i);
                 cnt++;
             }
         }
@@ -38,13 +38,14 @@ class Main {
     public static void bfs(int s) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(s);
+        visit[s] = true;
 
         while (!q.isEmpty()) {
             int cur = q.poll();
-            visit[cur] = true;
             for (int i = 1; i <= n; i++) {
                 if (map[cur][i] && !visit[i]) {
                     q.offer(i);
+                    visit[i] = true;
                 }
             }
         }
