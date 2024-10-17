@@ -21,12 +21,10 @@ class Main {
             }
         }
         flood = new boolean[N][N];
-        visit = new boolean[N][N];
         for(int r = 0; r <= max; r++){
             isF(r);
             cnt = 0;
-            for(int v = 0; v < N; v++)
-                Arrays.fill(visit[v], false);
+            visit = new boolean[N][N];
             for(int i = 0; i < N; i++){
                 for(int j = 0; j < N; j++){
                     if(!flood[i][j] && !visit[i][j])
